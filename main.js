@@ -28,7 +28,7 @@ window.addEventListener('mousemove', (e) => {
 // Carrusel de texto Hero
 const words = [
     { text: "n8n", color: "from-[#c4ff00] to-[#e2ff66]" },
-    { text: "la IA", color: "from-cyan-400 to-blue-500" },
+    { text: "IA", color: "from-cyan-400 to-blue-500" },
     { text: "Diseño Gráfico", color: "from-fuchsia-400 to-pink-500" },
     { text: "Bitcoin", color: "from-[#F7931A] to-yellow-500" },
     { text: "Ciberseguridad", color: "from-red-500 to-rose-400" }
@@ -43,7 +43,13 @@ setInterval(() => {
     dynamicWordEl.style.animation = 'none';
     dynamicWordEl.offsetHeight;
     dynamicWordEl.style.animation = null;
-    dynamicWordEl.textContent = item.text + ".";
+    
+    let displayText = item.text;
+    if (window.translateText) {
+        displayText = window.translateText(item.text, window.currentAppLang || 'es');
+    }
+    
+    dynamicWordEl.textContent = displayText;
     dynamicWordEl.className = `inline-block text-transparent bg-clip-text bg-gradient-to-r ${item.color} word-transition drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]`;
 }, 3000);
 
@@ -511,3 +517,124 @@ const initBitcoinNetwork = () => {
     });
 };
 initBitcoinNetwork();
+
+// ==========================================
+// BACKGROUND HERO: GALAXIA / AGUJERO NEGRO
+// ==========================================
+const initHeroGalaxy = () => {
+    const container = document.getElementById('canvas-container-hero');
+    if (!container) return;
+
+    const scene = new THREE.Scene();
+    
+    // Cámara
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 30;
+    camera.position.y = 15;
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    // Partículas del Agujero Negro / Galaxia
+    const particlesCount = 12000; // Restauramos densidad original para mantener el dibujo limpio
+    const geometry = new THREE.BufferGeometry();
+    const posArray = new Float32Array(particlesCount * 3);
+    const colorsArray = new Float32Array(particlesCount * 3);
+
+    const color1 = new THREE.Color(0xc4ff00); // Acurast green clásico
+    const color2 = new THREE.Color(0xd4ff33); // Verde claro vibrante
+    const color3 = new THREE.Color(0x00ffaa); // Toques de Cyan sci-fi
+    const voidColor = new THREE.Color(0x020202); // Vacío absoluto
+
+    for(let i = 0; i < particlesCount; i++) {
+        const i3 = i * 3;
+        
+        // Forma de la galaxia EXACTA a la versión original que funcionó
+        const radius = Math.random() * 40 + 2; 
+        const spinAngle = radius * 0.5; // Espiral
+        const branchAngle = ((i % 3) / 3) * Math.PI * 2; // 3 brazos espirales
+        const randomAngle = Math.random() * Math.PI * 2;
+        
+        // Coordenadas esféricas convertidas a cartesianas para efecto de disco plano
+        const x = Math.cos(branchAngle + spinAngle + randomAngle * 0.1) * radius + (Math.random() - 0.5) * 2;
+        const z = Math.sin(branchAngle + spinAngle + randomAngle * 0.1) * radius + (Math.random() - 0.5) * 2;
+        const y = (Math.random() - 0.5) * (40 / radius); // Más alto en el centro, plano en bordes
+
+        posArray[i3] = x;
+        posArray[i3+1] = y;
+        posArray[i3+2] = z;
+
+        // --- SISTEMA DE COLOR VIVO ---
+        const randColor = Math.random();
+        let baseColor;
+        
+        if(randColor < 0.70) baseColor = color1.clone(); 
+        else if(randColor < 0.90) baseColor = color2.clone();
+        else baseColor = color3.clone();
+
+        // Destellos aleatorios ultrabrillantes simulando estrellas masivas
+        if (Math.random() > 0.98) baseColor = new THREE.Color(0xffffff);
+
+        // Desvanecimiento suave hacia los bordes de la galaxia
+        const fadeFactor = Math.min(Math.pow(radius / 40, 1.5), 1);
+        baseColor.lerp(voidColor, fadeFactor);
+
+        colorsArray[i3] = baseColor.r;
+        colorsArray[i3+1] = baseColor.g;
+        colorsArray[i3+2] = baseColor.b;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
+
+    const material = new THREE.PointsMaterial({
+        size: 0.1,
+        vertexColors: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false, // Fundamental para blending perfecto sin recortes
+        transparent: true,
+        opacity: 0.9
+    });
+
+    const particlesMesh = new THREE.Points(geometry, material);
+    scene.add(particlesMesh);
+
+    // Mouse interaccion
+    let mouseX = 0;
+    let mouseY = 0;
+    
+    document.addEventListener('mousemove', (event) => {
+        mouseX = (event.clientX / window.innerWidth) - 0.5;
+        mouseY = (event.clientY / window.innerHeight) - 0.5;
+    });
+
+    const clock = new THREE.Clock();
+
+    const animate = () => {
+        requestAnimationFrame(animate);
+        const elapsedTime = clock.getElapsedTime();
+
+        // Rotación general de la galaxia
+        particlesMesh.rotation.y = elapsedTime * 0.08;
+
+        // Movimiento reactivo al mouse (paralax sutil)
+        camera.position.x += (mouseX * 15 - camera.position.x) * 0.05;
+        camera.position.y += (-mouseY * 15 + 15 - camera.position.y) * 0.05;
+        camera.lookAt(0, 0, 0);
+
+        renderer.render(scene, camera);
+    };
+
+    animate();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+};
+
+initHeroGalaxy();

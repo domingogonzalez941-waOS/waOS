@@ -93,3 +93,18 @@ body {
     z-index: 10;
     pointer-events: auto;
 }
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+.animate-spin-slow {
+    animation: spin-slow 30s linear infinite;
+}
+.animate-spin-reverse-slow {
+    animation: spin-reverse-slow 40s linear infinite;
+}
