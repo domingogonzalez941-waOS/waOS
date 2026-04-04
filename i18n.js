@@ -79,7 +79,7 @@ const dictionary = {
     "Despliegue ágil": "Agile deployment",
     "IA Core": "AI Core",
     "Automatización": "Automation",
-    
+
     // LOGIN MODAL
     "Login ": "Login ",
     "Acceso a la Plataforma": "Platform Access",

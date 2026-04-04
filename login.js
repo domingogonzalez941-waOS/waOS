@@ -79,10 +79,10 @@ container.innerHTML = loginModalHTML;
 document.body.appendChild(container.firstElementChild);
 
 // Global Toggle Function
-window.toggleLoginModal = function() {
+window.toggleLoginModal = function () {
     const modal = document.getElementById('login-modal');
     const box = document.getElementById('login-box');
-    if(modal.classList.contains('opacity-0')) {
+    if (modal.classList.contains('opacity-0')) {
         // Abrir
         modal.classList.remove('opacity-0', 'pointer-events-none');
         box.classList.remove('scale-95');
