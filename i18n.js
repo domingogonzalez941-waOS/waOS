@@ -60,14 +60,14 @@ const dictionary = {
     "Escalando la red. Entiende el funcionamiento de Lightning Network para micropagos instantáneos y el ecosistema financiero que se construye sobre BTC.": "Scaling the network. Understand how the Lightning Network works for instant micropayments and the financial ecosystem built on BTC.",
     "Terminal de ": "Admission ",
     "Admisión": "Terminal",
-    "Ingresa tus parámetros para postular a las próximas cohortes presenciales en La Asunción.": "Enter your parameters to apply for the next in-person cohorts in La Asunción.",
+    "Ingresa tus parámetros para postular a las próximas cohortes presenciales en Pampatar.": "Enter your parameters to apply for the next in-person cohorts in Pampatar.",
     "Selecciona tu especialización": "Select your specialization",
     "n8n & Automatizaciones": "n8n & Automations",
     "Diseño Gráfico & Marca Personal": "Graphic Design & Personal Brand",
     "Bitcoin & Blockchain": "Bitcoin & Blockchain",
     "Cuéntanos brevemente tu experiencia previa...": "Briefly tell us about your prior experience...",
     "RUN PROTOCOL ": "RUN PROTOCOL ",
-    "Sede: La Asunción, Nueva Esparta, Venezuela. © 2026": "Headquarters: La Asunción, Nueva Esparta, Venezuela. © 2026",
+    "Sede: Centro Comercial y Empresarial AB, Av. Bolívar con Av. Aldonza Manrique, Urbanización Playa El Ángel, Pampatar, Municipio Maneiro, Estado Nueva Esparta, Venezuela. © 2026": "Headquarters: Centro Comercial y Empresarial AB, Av. Bolívar with Av. Aldonza Manrique, Playa El Ángel, Pampatar, Maneiro Municipality, Nueva Esparta State, Venezuela. © 2026",
     "sys.log": "sys.log",
     "soporte": "support",
     "Convocatoria Abierta 2026": "Open Call 2026",
@@ -78,7 +78,20 @@ const dictionary = {
     "Alto Nivel": "High Level",
     "Despliegue ágil": "Agile deployment",
     "IA Core": "AI Core",
-    "Automatización": "Automation"
+    "Automatización": "Automation",
+    
+    // LOGIN MODAL
+    "Login ": "Login ",
+    "Acceso a la Plataforma": "Platform Access",
+    "Ingresa a tu cuenta": "Log in to your account",
+    "Correo Electrónico": "Email Address",
+    "ejemplo@correo.com": "example@email.com",
+    "Contraseña": "Password",
+    "¿Olvidaste tu contraseña?": "Forgot your password?",
+    "Mantener mi sesión iniciada": "Keep me logged in",
+    "Iniciar Sesión ": "Log In ",
+    "Las inscripciones están cerradas. ": "Registrations are closed. ",
+    "La creación de cuentas es procesada manualmente por el administrador.": "Account creation is manually processed by the administrator."
 };
 
 const textNodes = [];

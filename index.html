@@ -79,6 +79,10 @@
                         class="flex items-center gap-2 text-sm font-bold text-gray-300 px-4 py-2 hover:text-acurast transition-all">
                         Explorar Rutas
                     </a>
+                    <button onclick="toggleLoginModal()"
+                        class="flex items-center gap-2 text-sm font-bold text-gray-300 px-4 py-2 hover:text-white transition-all">
+                        Login <i data-lucide="user" class="w-4 h-4"></i>
+                    </button>
                     <a href="#admision"
                         class="flex items-center gap-2 text-sm font-bold bg-transparent border border-acurast text-acurast px-5 py-2.5 rounded-full hover:bg-acurast hover:text-black transition-all hover:scale-105 active:scale-95">
                         Aplicar Ahora <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -158,7 +162,7 @@
                             <div>
                                 <h4 class="text-white font-bold text-xl mb-1">1 Clase Presencial Semanal</h4>
                                 <p class="text-gray-400">Ejecución práctica, trabajo en equipo y networking en nuestra
-                                    sede física en <strong class="text-white font-semibold">La Asunción</strong>.</p>
+                                    sede física en <strong class="text-white font-semibold">Pampatar</strong>.</p>
                             </div>
                         </div>
                     </div>
@@ -181,7 +185,7 @@
                             <p><span class="text-acurast">root@waos</span>:~$ execute hands_on_projects</p>
                             <p class="text-gray-400">Compiling portfolio... <span class="text-green-400">[OK]</span></p>
                             <p><span class="text-acurast">root@waos</span>:~$ locate_campus --city</p>
-                            <p class="text-gray-400">Target acquired: La Asunción, VE</p>
+                            <p class="text-gray-400">Target acquired: Pampatar, VE</p>
                             <p class="text-black mt-6 font-bold pl-3 py-2 bg-acurast rounded flex items-center gap-2">
                                 <i data-lucide="check-circle" class="w-4 h-4"></i> STATUS: READY FOR DEPLOYMENT
                             </p>
@@ -392,8 +396,7 @@
             <div class="text-center mb-12">
                 <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Terminal de <span
                         class="text-acurast">Admisión</span></h2>
-                <p class="text-gray-400">Ingresa tus parámetros para postular a las próximas cohortes presenciales en La
-                    Asunción.</p>
+                <p class="text-gray-400">Ingresa tus parámetros para postular a las próximas cohortes presenciales en Pampatar.</p>
             </div>
 
             <div
@@ -449,7 +452,7 @@
                 </div>
                 <span class="text-lg font-bold text-white font-display">waOS Academy.</span>
             </div>
-            <p class="text-sm text-gray-500">Sede: La Asunción, Nueva Esparta, Venezuela. © 2026</p>
+            <p class="text-xs text-gray-500 text-center md:text-right max-w-sm leading-relaxed">Sede: Centro Comercial y Empresarial AB, Av. Bolívar con Av. Aldonza Manrique, Urbanización Playa El Ángel, Pampatar, Municipio Maneiro, Estado Nueva Esparta, Venezuela. © 2026</p>
             <div class="flex gap-4 text-sm font-mono text-gray-400">
                 <a href="#" class="hover:text-acurast transition-colors">sys.log</a>
                 <a href="#" class="hover:text-acurast transition-colors">soporte</a>
@@ -457,8 +460,8 @@
         </div>
     </footer>
 
-    <!-- LOGICA GENERAL Y DE INTERFAZ -->
-    <!-- LOGICA GENERAL Y DE INTERFAZ -->
+    <!-- COMPONENTES EXTERNOS -->
+    <script src="login.js?v=2"></script>
     <script src="main.js?v=2"></script>
     <script src="i18n.js?v=2"></script>
 
