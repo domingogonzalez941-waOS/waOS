@@ -181,7 +181,7 @@ window.setLanguage = function (lang) {
             }
         });
 
-        // 3. Reemplazar inputs, pre-llenados y dropdowns especiales
+        // 3. Reemplazar inputs y pre-llenados (Placeholders son atributos, no textNodes)
         const inputs = document.querySelectorAll('input, select, textarea');
         inputs.forEach(input => {
             if (!input.dataset.originalPlaceholder && input.placeholder) {
@@ -193,17 +193,6 @@ window.setLanguage = function (lang) {
                 } else {
                     input.placeholder = input.dataset.originalPlaceholder;
                 }
-            }
-
-            if (input.tagName === 'SELECT') {
-                Array.from(input.options).forEach(opt => {
-                    if (!opt.dataset.originalText) opt.dataset.originalText = opt.text;
-                    if (lang === 'en') {
-                        opt.text = translateText(opt.dataset.originalText, 'en') || opt.dataset.originalText;
-                    } else {
-                        opt.text = opt.dataset.originalText;
-                    }
-                });
             }
         });
 
