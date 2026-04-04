@@ -140,51 +140,77 @@ window.translateText = translateText;
 window.currentAppLang = 'es';
 
 window.setLanguage = function (lang) {
+    if (window.currentAppLang === lang) return;
     window.currentAppLang = lang;
-    // 1. Estilos de botones
-    const btnEs = document.getElementById('btn-es');
-    const btnEn = document.getElementById('btn-en');
 
-    if (lang === 'en') {
-        btnEn.className = "px-3 py-1 text-xs font-bold bg-acurast text-black rounded-full shadow-[0_0_10px_rgba(196,255,0,0.2)] transition-all";
-        btnEs.className = "px-3 py-1 text-xs font-bold text-gray-400 hover:text-white transition-all";
-    } else {
-        btnEs.className = "px-3 py-1 text-xs font-bold bg-acurast text-black rounded-full shadow-[0_0_10px_rgba(196,255,0,0.2)] transition-all";
-        btnEn.className = "px-3 py-1 text-xs font-bold text-gray-400 hover:text-white transition-all";
-    }
+    // Seleccionar todos los contenedores de texto principales para transicion
+    const transitionTargets = document.querySelectorAll('main, section, footer, nav, #login-box');
 
-    // 2. Reemplazar nodos HTML normales
-    textNodes.forEach(item => {
+    // Iniciar Animación de Salida (Fade-Out)
+    transitionTargets.forEach(el => {
+        el.style.transition = 'opacity 0.15s ease-out, filter 0.15s ease-out';
+        el.style.opacity = '0';
+        el.style.filter = 'blur(2px)';
+    });
+
+    // Esperar a que la página se empañe para inyectar el nuevo idioma oculto
+    setTimeout(() => {
+        // 1. Estilos de botones
+        const btnEs = document.getElementById('btn-es');
+        const btnEn = document.getElementById('btn-en');
+
         if (lang === 'en') {
-            item.node.nodeValue = translateText(item.originalText, 'en');
+            btnEn.className = "px-3 py-1 text-xs font-bold bg-acurast text-black rounded-full shadow-[0_0_10px_rgba(196,255,0,0.2)] transition-all";
+            btnEs.className = "px-3 py-1 text-xs font-bold text-gray-400 hover:text-white transition-all";
         } else {
-            item.node.nodeValue = item.originalText; // Español (Original)
+            btnEs.className = "px-3 py-1 text-xs font-bold bg-acurast text-black rounded-full shadow-[0_0_10px_rgba(196,255,0,0.2)] transition-all";
+            btnEn.className = "px-3 py-1 text-xs font-bold text-gray-400 hover:text-white transition-all";
         }
-    });
 
-    // 3. Reemplazar inputs, pre-llenados y dropdowns especiales
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        if (!input.dataset.originalPlaceholder && input.placeholder) {
-            input.dataset.originalPlaceholder = input.placeholder;
+        // Excepción interactiva para el texto dinámico principal que rota vía JS
+        if (window.updateDynamicWordLanguage) {
+            window.updateDynamicWordLanguage();
         }
-        if (input.placeholder) {
+
+        // 2. Reemplazar nodos HTML normales
+        textNodes.forEach(item => {
             if (lang === 'en') {
-                input.placeholder = translateText(input.dataset.originalPlaceholder, 'en') || input.dataset.originalPlaceholder;
+                item.node.nodeValue = translateText(item.originalText, 'en');
             } else {
-                input.placeholder = input.dataset.originalPlaceholder;
+                item.node.nodeValue = item.originalText; // Español (Original)
             }
-        }
+        });
 
-        if (input.tagName === 'SELECT') {
-            Array.from(input.options).forEach(opt => {
-                if (!opt.dataset.originalText) opt.dataset.originalText = opt.text;
+        // 3. Reemplazar inputs, pre-llenados y dropdowns especiales
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            if (!input.dataset.originalPlaceholder && input.placeholder) {
+                input.dataset.originalPlaceholder = input.placeholder;
+            }
+            if (input.placeholder) {
                 if (lang === 'en') {
-                    opt.text = translateText(opt.dataset.originalText, 'en') || opt.dataset.originalText;
+                    input.placeholder = translateText(input.dataset.originalPlaceholder, 'en') || input.dataset.originalPlaceholder;
                 } else {
-                    opt.text = opt.dataset.originalText;
+                    input.placeholder = input.dataset.originalPlaceholder;
                 }
-            });
-        }
-    });
+            }
+
+            if (input.tagName === 'SELECT') {
+                Array.from(input.options).forEach(opt => {
+                    if (!opt.dataset.originalText) opt.dataset.originalText = opt.text;
+                    if (lang === 'en') {
+                        opt.text = translateText(opt.dataset.originalText, 'en') || opt.dataset.originalText;
+                    } else {
+                        opt.text = opt.dataset.originalText;
+                    }
+                });
+            }
+        });
+
+        // Refrescar y mostrar UI con el texto traducido (Fade-In)
+        transitionTargets.forEach(el => {
+            el.style.opacity = '1';
+            el.style.filter = 'blur(0px)';
+        });
+    }, 150); // Mismo tiempo que la CSS trasition para encadenar
 };

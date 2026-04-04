@@ -37,6 +37,15 @@ const words = [
 let currentWordIndex = 0;
 const dynamicWordEl = document.getElementById('dynamic-word');
 
+window.updateDynamicWordLanguage = function () {
+    const item = words[currentWordIndex];
+    let displayText = item.text;
+    if (window.translateText) {
+        displayText = window.translateText(item.text, window.currentAppLang || 'es');
+    }
+    if (dynamicWordEl) dynamicWordEl.textContent = displayText;
+};
+
 setInterval(() => {
     currentWordIndex = (currentWordIndex + 1) % words.length;
     const item = words[currentWordIndex];
@@ -50,7 +59,11 @@ setInterval(() => {
     }
 
     dynamicWordEl.textContent = displayText;
-    dynamicWordEl.className = `inline-block text-transparent bg-clip-text bg-gradient-to-r ${item.color} word-transition drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]`;
+
+    // Solo asignar el glow neón fuerte si es n8n, el resto sin sombra excesiva
+    const shadowClass = item.text === "n8n" ? "drop-shadow-[0_0_60px_rgba(196,255,0,0.5)]" : "drop-shadow-none";
+
+    dynamicWordEl.className = `block text-transparent bg-clip-text bg-gradient-to-r ${item.color} word-transition ${shadowClass} min-h-[1.5em] w-full -mt-2 md:-mt-8 relative z-20 pb-4 px-8`;
 }, 3000);
 
 const initN8nMesh = () => {
