@@ -43,12 +43,12 @@ setInterval(() => {
     dynamicWordEl.style.animation = 'none';
     dynamicWordEl.offsetHeight;
     dynamicWordEl.style.animation = null;
-    
+
     let displayText = item.text;
     if (window.translateText) {
         displayText = window.translateText(item.text, window.currentAppLang || 'es');
     }
-    
+
     dynamicWordEl.textContent = displayText;
     dynamicWordEl.className = `inline-block text-transparent bg-clip-text bg-gradient-to-r ${item.color} word-transition drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]`;
 }, 3000);
@@ -526,7 +526,7 @@ const initHeroGalaxy = () => {
     if (!container) return;
 
     const scene = new THREE.Scene();
-    
+
     // Cámara
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 30;
@@ -549,30 +549,30 @@ const initHeroGalaxy = () => {
     const color3 = new THREE.Color(0x00ffaa); // Toques de Cyan sci-fi
     const voidColor = new THREE.Color(0x020202); // Vacío absoluto
 
-    for(let i = 0; i < particlesCount; i++) {
+    for (let i = 0; i < particlesCount; i++) {
         const i3 = i * 3;
-        
+
         // Forma de la galaxia EXACTA a la versión original que funcionó
-        const radius = Math.random() * 40 + 2; 
+        const radius = Math.random() * 40 + 2;
         const spinAngle = radius * 0.5; // Espiral
         const branchAngle = ((i % 3) / 3) * Math.PI * 2; // 3 brazos espirales
         const randomAngle = Math.random() * Math.PI * 2;
-        
+
         // Coordenadas esféricas convertidas a cartesianas para efecto de disco plano
         const x = Math.cos(branchAngle + spinAngle + randomAngle * 0.1) * radius + (Math.random() - 0.5) * 2;
         const z = Math.sin(branchAngle + spinAngle + randomAngle * 0.1) * radius + (Math.random() - 0.5) * 2;
         const y = (Math.random() - 0.5) * (40 / radius); // Más alto en el centro, plano en bordes
 
         posArray[i3] = x;
-        posArray[i3+1] = y;
-        posArray[i3+2] = z;
+        posArray[i3 + 1] = y;
+        posArray[i3 + 2] = z;
 
         // --- SISTEMA DE COLOR VIVO ---
         const randColor = Math.random();
         let baseColor;
-        
-        if(randColor < 0.70) baseColor = color1.clone(); 
-        else if(randColor < 0.90) baseColor = color2.clone();
+
+        if (randColor < 0.70) baseColor = color1.clone();
+        else if (randColor < 0.90) baseColor = color2.clone();
         else baseColor = color3.clone();
 
         // Destellos aleatorios ultrabrillantes simulando estrellas masivas
@@ -583,8 +583,8 @@ const initHeroGalaxy = () => {
         baseColor.lerp(voidColor, fadeFactor);
 
         colorsArray[i3] = baseColor.r;
-        colorsArray[i3+1] = baseColor.g;
-        colorsArray[i3+2] = baseColor.b;
+        colorsArray[i3 + 1] = baseColor.g;
+        colorsArray[i3 + 2] = baseColor.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -605,7 +605,7 @@ const initHeroGalaxy = () => {
     // Mouse interaccion
     let mouseX = 0;
     let mouseY = 0;
-    
+
     document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX / window.innerWidth) - 0.5;
         mouseY = (event.clientY / window.innerHeight) - 0.5;
