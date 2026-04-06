@@ -105,7 +105,17 @@ const dictionary = {
     "Mantener mi sesión iniciada": "Keep me logged in",
     "Iniciar Sesión ": "Log In ",
     "Las inscripciones están cerradas. ": "Registrations are closed. ",
-    "La creación de cuentas es procesada manualmente por el administrador.": "Account creation is manually processed by the administrator."
+    "La creación de cuentas es procesada manualmente por el administrador.": "Account creation is manually processed by the administrator.",
+
+    // Módulo 4: Proyecto Final para todas las rutas
+    "Módulo 4: Arquitectura Final": "Module 4: Final Architecture",
+    "Construcción y despliegue de un ecosistema automatizado integral en producción y defensa del mismo frente a un jurado técnico.": "Construction and deployment of a comprehensive automated ecosystem in production and its defense before a technical jury.",
+    "Módulo 4: Portafolio Final": "Module 4: Final Portfolio",
+    "Presentación de tu branding personal y defensa de piezas gráficas comerciales ante directores de arte como jurado.": "Presentation of your personal branding and defense of commercial graphic pieces before art directors serving as a jury.",
+    "Proyecto Final (Simulacro)": "Final Project (Simulation)",
+    "Realización de un ejercicio integral de Red Team/Blue Team (Capture The Flag) y reporte ejecutivo defendido en vivo.": "Execution of a comprehensive Red Team/Blue Team exercise (Capture The Flag) and live defense of an executive report.",
+    "Módulo 4: Despliegue Soberano": "Module 4: Sovereign Deployment",
+    "Configuración final de tu propio nodo, gestión integral de billeteras frías y defensa de tus protocolos de seguridad on-chain.": "Final configuration of your own node, comprehensive cold wallet management, and defense of your on-chain security protocols."
 };
 
 const textNodes = [];

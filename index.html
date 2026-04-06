@@ -304,6 +304,11 @@
                         <p class="text-gray-400 text-sm">Deja de pagar mensualidades excesivas. Aprende a hostear tu
                             propio n8n utilizando servidores Linux, contenedores Docker y PostgreSQL.</p>
                     </div>
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-acurast bg-acurast/5 shadow-[0_0_15px_rgba(196,255,0,0.1)]">
+                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="award"
+                                class="text-acurast w-5 h-5"></i> Módulo 4: Arquitectura Final</h4>
+                        <p class="text-gray-400 text-sm">Construcción y despliegue de un ecosistema automatizado integral en producción y defensa del mismo frente a un jurado técnico.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -337,6 +342,11 @@
                         <p class="text-gray-400 text-sm">De nada sirve diseñar bien si nadie te conoce. Estrategias de
                             posicionamiento, manuales de identidad visual y creación de un portafolio magnético.</p>
                     </div>
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-fuchsia-500 bg-fuchsia-500/5 shadow-[0_0_15px_rgba(217,70,239,0.1)]">
+                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i
+                                data-lucide="award" class="text-fuchsia-500 w-5 h-5"></i> Módulo 4: Portafolio Final</h4>
+                        <p class="text-gray-400 text-sm">Presentación de tu branding personal y defensa de piezas gráficas comerciales ante directores de arte como jurado.</p>
+                    </div>
                 </div>
 
                 <div class="order-1 md:order-2">
@@ -358,56 +368,85 @@
     </section>
 
     <!-- RUTA 3: CIBERSEGURIDAD (GLOBO 3D Y ATAQUES) -->
+    <!-- RUTA 3: CIBERSEGURIDAD (GLOBO 3D Y ATAQUES) -->
     <section id="ruta-cyber" class="relative min-h-screen py-32 flex items-center bg-[#050000] border-b border-white/5 overflow-hidden">
-        <!-- Niebla roja volumétrica (Blurs profundos) -->
-        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-10 w-[600px] h-[600px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <!-- Niebla roja volumétrica (Blurs elegantes) -->
+        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none opacity-50"></div>
 
-        <!-- Contenedor ThreeJS para el Globo Cibernético -->
-        <div id="canvas-container-cyber" class="absolute inset-0 z-0 opacity-80 mix-blend-screen pointer-events-none"></div>
+        <!-- Contenedor ThreeJS original para el Globo Cibernético -->
+        <div id="canvas-container-cyber" class="absolute inset-0 z-0 opacity-60 mix-blend-screen pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-6 w-full content-layer relative z-10">
+        <div class="max-w-7xl mx-auto px-6 w-full content-layer relative z-10 font-sans">
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/50 bg-red-500/10 text-red-400 font-mono text-xs mb-6 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> RUTA 03 // DEFENSA
+                
+                <!-- Columna Izquierda: Copy Minimalista -->
+                <div class="pr-0 md:pr-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/20 bg-red-500/5 text-red-500 font-mono text-xs mb-8 backdrop-blur-md">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_8px_#ef4444]"></span> RUTA 03 // DEFENSA
                     </div>
-                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_0_30px_rgba(239,68,68,0.2)]">Ciberseguridad<br />& <span class="text-red-500">Hacking Ético</span></h2>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        La defensa activa del ecosistema digital. Para construir defensas impenetrables, primero debes
-                        aprender a pensar, actuar y atacar como una amenaza real en un entorno hostil.
-                    </p>
                     
-                    <!-- Elemento decorativo tipo terminal -->
-                    <div class="bg-black/50 border border-red-500/20 rounded-lg p-4 font-mono text-xs text-red-400/80 mt-8 backdrop-blur-md">
-                        <p class="flex items-center gap-2"><i data-lucide="activity" class="w-4 h-4"></i> ANALYZING NETWORK TRAFFIC...</p>
-                        <p class="mt-2 text-gray-500">> firewall_status: <span class="text-red-500">BREACH DETECTED</span></p>
-                    </div>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+                        Ciberseguridad<br />& <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Hacking Ético</span>
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed font-light">
+                        La defensa activa del ecosistema digital. Para construir arquitecturas impenetrables, primero debes
+                        aprender a pensar y maniobrar como una amenaza real en un entorno hostil.
+                    </p>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="glass-panel p-6 rounded-2xl border border-red-500/10 border-l-4 border-l-red-500 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(239,68,68,0.15)]">
-                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
-                            <i data-lucide="terminal-square" class="text-red-500 w-5 h-5 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"></i> Módulo 1: Sistemas & Redes
+                <!-- Columna Derecha: Tarjetas de Módulos Elegantes -->
+                <div class="space-y-4">
+                    
+                    <!-- Modulo 1 -->
+                    <div class="group relative p-6 md:p-8 rounded-[1.5rem] bg-[#020000]/60 border border-white/5 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 hover:border-red-500/30 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/0 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h4 class="text-white font-medium text-xl mb-3 flex items-center gap-3 relative z-10">
+                            <span class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                                <i data-lucide="network" class="text-red-500 w-5 h-5"></i>
+                            </span> 
+                            Sistemas & Redes
                         </h4>
-                        <p class="text-gray-400 text-sm">Arquitectura TCP/IP, comandos avanzados en entornos Unix/Linux,
-                            manipulación de paquetes y reconocimiento de topologías de red.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed relative z-10 font-light pl-13 md:ml-13">Arquitectura TCP/IP, comandos avanzados en entornos Unix/Linux, manipulación de paquetes y reconocimiento de topologías de red.</p>
                     </div>
-                    <div class="glass-panel p-6 rounded-2xl border border-red-500/10 border-l-4 border-l-red-500 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(239,68,68,0.15)]">
-                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
-                            <i data-lucide="skull" class="text-red-500 w-5 h-5 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"></i> Módulo 2: Pentesting & OWASP
+                    
+                    <!-- Modulo 2 -->
+                    <div class="group relative p-6 md:p-8 rounded-[1.5rem] bg-[#020000]/60 border border-white/5 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 hover:border-red-500/30 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/0 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h4 class="text-white font-medium text-xl mb-3 flex items-center gap-3 relative z-10">
+                            <span class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                                <i data-lucide="shield-alert" class="text-red-500 w-5 h-5"></i>
+                            </span> 
+                            Pentesting & OWASP
                         </h4>
-                        <p class="text-gray-400 text-sm">Identificación y explotación activa de vulnerabilidades web
-                            críticas (Inyección SQL, XSS, CSRF). Uso táctico de herramientas ofensivas en Kali Linux.
-                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed relative z-10 font-light pl-13 md:ml-13">Identificación y explotación activa de vulnerabilidades web críticas (Inyección SQL, XSS, CSRF). Uso táctico de herramientas ofensivas en Kali Linux.</p>
                     </div>
-                    <div class="glass-panel p-6 rounded-2xl border border-red-500/10 border-l-4 border-l-red-500 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(239,68,68,0.15)]">
-                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
-                            <i data-lucide="shield-alert" class="text-red-500 w-5 h-5 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"></i> Módulo 3: Blue Team & Mitigación
+
+                    <!-- Modulo 3 -->
+                    <div class="group relative p-6 md:p-8 rounded-[1.5rem] bg-[#020000]/60 border border-white/5 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 hover:border-red-500/30 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/0 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h4 class="text-white font-medium text-xl mb-3 flex items-center gap-3 relative z-10">
+                            <span class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                                <i data-lucide="lock" class="text-red-500 w-5 h-5"></i>
+                            </span> 
+                            Blue Team & Mitigación
                         </h4>
-                        <p class="text-gray-400 text-sm">De atacante a defensor. Hardening de servidores corporativos,
-                            análisis de logs de intrusión, criptografía aplicada y parcheo de vulnerabilidades.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed relative z-10 font-light pl-13 md:ml-13">De atacante a defensor. Hardening de servidores corporativos, análisis de logs de intrusión, criptografía aplicada y parcheo de vulnerabilidades.</p>
                     </div>
+
+                    <!-- Modulo 4 -->
+                    <div class="group relative p-6 md:p-8 rounded-[1.5rem] bg-[#020000]/60 border border-red-500/20 backdrop-blur-xl hover:bg-black/80 transition-all duration-300 hover:border-red-500/50 shadow-[0_0_20px_rgba(239,68,68,0.05)] overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/0 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h4 class="text-white font-medium text-xl mb-3 flex items-center gap-3 relative z-10">
+                            <span class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center border border-red-500/40">
+                                <i data-lucide="award" class="text-red-500 w-5 h-5"></i>
+                            </span> 
+                            Proyecto Final (Simulacro)
+                        </h4>
+                        <p class="text-gray-400 text-sm leading-relaxed relative z-10 font-light pl-13 md:ml-13">Realización de un ejercicio integral de Red Team/Blue Team (Capture The Flag) y reporte ejecutivo defendido en vivo.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -441,6 +480,12 @@
                                 class="text-bitcoin w-5 h-5"></i> Módulo 3: Ecosistema L2 (Lightning)</h4>
                         <p class="text-gray-400 text-sm">Escalando la red. Entiende el funcionamiento de Lightning
                             Network para micropagos instantáneos y el ecosistema financiero que se construye sobre BTC.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-bitcoin bg-bitcoin/5 shadow-[0_0_15px_rgba(247,147,26,0.1)]">
+                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="award"
+                                class="text-bitcoin w-5 h-5"></i> Módulo 4: Despliegue Soberano</h4>
+                        <p class="text-gray-400 text-sm">Configuración final de tu propio nodo, gestión integral de billeteras frías y defensa de tus protocolos de seguridad on-chain.
                         </p>
                     </div>
                 </div>
