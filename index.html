@@ -140,79 +140,125 @@
     </main>
 
     <!-- METODOLOGÍA SECTION -->
-    <section id="metodologia" class="relative z-10 py-24 px-6 border-y border-white/5 bg-black/80 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto content-layer">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Aprendizaje <span
-                            class="text-acurast">Híbrido</span> Intensivo.</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        No creemos en tutoriales masivos grabados. Creemos en la mentoría directa, en ensuciarse las
-                        manos con código real y en construir sistemas listos para producción.
-                    </p>
+    <section id="metodologia" class="relative z-10 py-24 px-6 border-y border-white/5 bg-[#020500] overflow-hidden">
+        
+        <!-- Underwater Waves Environment (Fondo del Mar) -->
+        <div class="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden opacity-100">
+            <!-- Rayos de luz submarina -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-gradient-to-b from-acurast/10 to-transparent blur-[80px] rounded-[100%]"></div>
+            
+            <svg class="absolute top-1/4 left-0 w-[200%] h-[500px] drop-shadow-[0_0_30px_rgba(196,255,0,0.6)] mix-blend-screen" viewBox="0 0 2000 200" preserveAspectRatio="none">
+                <!-- Ola Profunda y Gruesa -->
+                <path id="sea-wave-1" d="M 0,100 Q 250,70 500,100 T 1000,100 T 1500,100 T 2000,100" fill="none" stroke="rgba(196,255,0,0.15)" stroke-width="15" />
+                <!-- Ola Media Rápida -->
+                <path id="sea-wave-2" d="M 0,120 Q 250,150 500,120 T 1000,120 T 1500,120 T 2000,120" fill="none" stroke="rgba(196,255,0,0.4)" stroke-width="4" />
+                <!-- Ola Superficial Aguda y Eléctrica -->
+                <path id="sea-wave-3" d="M 0,140 Q 250,110 500,140 T 1000,140 T 1500,140 T 2000,140" fill="none" stroke="#c4ff00" stroke-width="2" />
+                
+                <style>
+                    @keyframes flowSea1 { 100% { transform: translateX(-50%); } }
+                    @keyframes flowSea2 { 100% { transform: translateX(-50%); } }
+                    @keyframes flowSea3 { 100% { transform: translateX(-50%); } }
+                    #sea-wave-1 { animation: flowSea1 12s linear infinite; }
+                    #sea-wave-2 { animation: flowSea2 8s linear infinite reverse; }
+                    #sea-wave-3 { animation: flowSea3 18s linear infinite; }
+                </style>
+            </svg>
+        </div>
 
-                    <div class="space-y-6">
-                        <div class="flex gap-4 items-start">
-                            <div
-                                class="w-12 h-12 rounded-full bg-acurast/10 flex items-center justify-center shrink-0 border border-acurast/20 mt-1">
-                                <i data-lucide="calendar" class="text-acurast w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-1">4 Meses de BootCamp</h4>
-                                <p class="text-gray-400">Duración intensiva enfocada en aprendizaje personalizado,
-                                    resultados rápidos y creación de portafolio.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 items-start">
-                            <div
-                                class="w-12 h-12 rounded-full bg-acurast/10 flex items-center justify-center shrink-0 border border-acurast/20 mt-1">
-                                <i data-lucide="laptop" class="text-acurast w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-1">1 Clase Online Semanal</h4>
-                                <p class="text-gray-400">Fundamentos teóricos, setups de entornos de desarrollo y
-                                    revisión de código en vivo con instructores.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 items-start">
-                            <div
-                                class="w-12 h-12 rounded-full bg-acurast/10 flex items-center justify-center shrink-0 border border-acurast/20 mt-1">
-                                <i data-lucide="map-pin" class="text-acurast w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-xl mb-1">1 Clase Presencial Semanal</h4>
-                                <p class="text-gray-400">Ejecución práctica, trabajo en equipo y networking en nuestra
-                                    sede física en <strong class="text-white font-semibold">Pampatar</strong>.</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Cristal del Acuario (Filtro Blur Maestro encima del mar) -->
+        <div class="absolute inset-0 bg-[#020500]/30 backdrop-blur-md z-0 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto content-layer relative z-10 text-center">
+            
+            <!-- HEADER -->
+            <div class="max-w-3xl mx-auto mb-20 md:mb-32 cursor-default">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-acurast/30 bg-acurast/10 text-acurast font-mono text-xs mb-6 mx-auto shadow-[0_0_15px_rgba(196,255,0,0.3)]">
+                    <span class="w-2 h-2 rounded-full bg-acurast animate-bounce"></span> Mentoría 1 a 1
                 </div>
-                <div class="relative">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-acurast/20 to-transparent blur-3xl rounded-full">
-                    </div>
-                    <div class="glass-panel p-8 rounded-3xl relative border border-white/10 shadow-2xl">
-                        <div
-                            class="font-mono text-xs text-gray-500 mb-4 border-b border-white/10 pb-4 flex justify-between">
-                            <span>sys.log > execution_plan.sh</span>
-                            <span class="text-acurast flex items-center gap-2">
-                                <div class="w-2 h-2 rounded-full bg-acurast animate-pulse"></div> RUNNING
-                            </span>
-                        </div>
-                        <div class="space-y-3 font-mono text-sm">
-                            <p><span class="text-acurast">root@waos</span>:~$ init phase_01_fundamentals</p>
-                            <p class="text-gray-400">Loading modules... <span class="text-green-400">[OK]</span></p>
-                            <p><span class="text-acurast">root@waos</span>:~$ execute hands_on_projects</p>
-                            <p class="text-gray-400">Compiling portfolio... <span class="text-green-400">[OK]</span></p>
-                            <p><span class="text-acurast">root@waos</span>:~$ locate_campus --city</p>
-                            <p class="text-gray-400">Target acquired: Pampatar, VE</p>
-                            <p class="text-black mt-6 font-bold pl-3 py-2 bg-acurast rounded flex items-center gap-2">
-                                <i data-lucide="check-circle" class="w-4 h-4"></i> STATUS: READY FOR DEPLOYMENT
-                            </p>
-                        </div>
-                    </div>
+                <h2 class="font-display text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-[0_0_20px_rgba(196,255,0,0.1)]">
+                    Aprendizaje <span class="text-acurast relative inline-block">Híbrido<div class="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-acurast to-transparent"></div></span> Intensivo
+                </h2>
+                <h3 class="text-xl md:text-2xl text-acurast/90 font-light mb-6">Formación tecnológica personalizada, enfocada en resultados.</h3>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Diseñamos un plan 100% a tu medida. Evaluamos tu nivel, definimos un roadmap claro y trabajas 1 a 1 con un mentor en nuestra sede de Pampatar.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <span class="px-4 py-2 bg-black/50 border border-white/10 rounded-full text-xs font-mono text-gray-300 flex items-center gap-2 backdrop-blur-md hover:border-acurast/50 transition-colors"><i data-lucide="laptop" class="w-4 h-4 text-acurast"></i> 1 clase online semanal</span>
+                    <span class="px-4 py-2 bg-black/50 border border-white/10 rounded-full text-xs font-mono text-gray-300 flex items-center gap-2 backdrop-blur-md hover:border-acurast/50 transition-colors"><i data-lucide="map-pin" class="w-4 h-4 text-acurast"></i> 1 clase presencial semanal</span>
                 </div>
             </div>
+
+            <!-- LINEA DE TIEMPO LINEAL (Sleek) -->
+            <div class="relative w-full mt-10 md:mt-24 pb-12 cursor-default z-20">
+
+                <style>
+                    @keyframes flowEnergy {
+                        0% { left: 0%; opacity: 0; width: 0px; }
+                        10% { opacity: 1; width: 100px; }
+                        90% { opacity: 1; width: 100px; }
+                        100% { left: 100%; opacity: 0; width: 0px; }
+                    }
+                    .animate-energy { animation: flowEnergy 4s ease-in-out infinite; }
+                </style>
+
+                <!-- Línea Conectora Horizontal (Solo Desktop) -->
+                <div class="hidden md:block absolute top-[27px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-acurast/20 to-transparent">
+                    <!-- Pulso de energía viajando por la línea -->
+                    <div class="absolute top-0 h-full bg-acurast shadow-[0_0_15px_#c4ff00] animate-energy"></div>
+                </div>
+
+                <!-- 4 Nodes Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4 relative px-4 md:px-0">
+                    
+                    <!-- Node 1 -->
+                    <div class="relative flex flex-col items-center text-center group/node transition-transform hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-[0.8rem] bg-[#020500]/80 backdrop-blur-lg border border-gray-800 mb-8 flex items-center justify-center relative group-hover/node:border-acurast group-hover/node:shadow-[0_0_20px_rgba(196,255,0,0.5)] transition-all z-10 transform group-hover/node:rotate-45">
+                            <span class="text-sm text-gray-400 font-bold font-mono group-hover/node:text-acurast transform group-hover/node:-rotate-45 transition-transform duration-300">01</span>
+                            <!-- Connection Line for Mobile -->
+                            <div class="absolute top-14 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gray-800 to-transparent md:hidden transform group-hover/node:-rotate-45"></div>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-acurast font-mono mb-2 opacity-80">Mes 1</span>
+                        <h4 class="text-white font-bold text-lg mb-2 z-10 w-full md:px-2">Módulo Introductorio</h4>
+                        <p class="text-sm text-gray-400 px-4 leading-relaxed z-10 font-light">Fundamentos y nivelación para fortalecer tu lógica.</p>
+                    </div>
+
+                    <!-- Node 2 -->
+                    <div class="relative flex flex-col items-center text-center group/node transition-transform hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-[0.8rem] bg-[#020500]/80 backdrop-blur-lg border border-gray-800 mb-8 flex items-center justify-center relative group-hover/node:border-acurast group-hover/node:shadow-[0_0_20px_rgba(196,255,0,0.5)] transition-all z-10 transform group-hover/node:rotate-45">
+                            <span class="text-sm text-gray-400 font-bold font-mono group-hover/node:text-acurast transform group-hover/node:-rotate-45 transition-transform duration-300">02</span>
+                            <div class="absolute top-14 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gray-800 to-transparent md:hidden transform group-hover/node:-rotate-45"></div>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-acurast font-mono mb-2 opacity-80">Mes 2</span>
+                        <h4 class="text-white font-bold text-lg mb-2 z-10 w-full md:px-2">Herramientas</h4>
+                        <p class="text-sm text-gray-400 px-4 leading-relaxed z-10 font-light">Practicas con el software que usa la industria.</p>
+                    </div>
+
+                    <!-- Node 3 -->
+                    <div class="relative flex flex-col items-center text-center group/node transition-transform hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-[0.8rem] bg-[#020500]/80 backdrop-blur-lg border border-gray-800 mb-8 flex items-center justify-center relative group-hover/node:border-acurast group-hover/node:shadow-[0_0_20px_rgba(196,255,0,0.5)] transition-all z-10 transform group-hover/node:rotate-45">
+                            <span class="text-sm text-gray-400 font-bold font-mono group-hover/node:text-acurast transform group-hover/node:-rotate-45 transition-transform duration-300">03</span>
+                            <div class="absolute top-14 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gray-800 to-transparent md:hidden transform group-hover/node:-rotate-45"></div>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-acurast font-mono mb-2 opacity-80">Mes 3</span>
+                        <h4 class="text-white font-bold text-lg mb-2 z-10 w-full md:px-2">Mastering</h4>
+                        <p class="text-sm text-gray-400 px-4 leading-relaxed z-10 font-light">Estrategias avanzadas para pensar como arquitecto de software.</p>
+                    </div>
+
+                    <!-- Node 4 -->
+                    <div class="relative flex flex-col items-center text-center group/node transition-transform hover:-translate-y-2">
+                        <div class="w-14 h-14 rounded-[0.8rem] bg-acurast/10 backdrop-blur-lg border border-acurast mb-8 flex items-center justify-center relative shadow-[0_0_20px_rgba(196,255,0,0.2)] z-10 transform group-hover/node:rotate-45 transition-transform duration-500">
+                            <span class="text-sm text-acurast font-bold font-mono transform group-hover/node:-rotate-45 transition-transform duration-500">04</span>
+                            <div class="absolute inset-0 rounded-[0.8rem] border border-acurast animate-ping opacity-30"></div>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-[#020500] font-bold bg-acurast px-3 py-1 rounded-full mb-2 shadow-[0_0_10px_rgba(196,255,0,0.3)]">Mes 4</span>
+                        <h4 class="text-acurast font-bold text-lg mb-2 z-10 w-full md:px-2 drop-shadow-[0_0_5px_rgba(196,255,0,0.3)]">Proyecto Final</h4>
+                        <p class="text-sm text-gray-400 px-4 leading-relaxed z-10 font-light">Defensa presencial de tu portafolio frente a jurado técnico.</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -312,46 +358,53 @@
     </section>
 
     <!-- RUTA 3: CIBERSEGURIDAD (GLOBO 3D Y ATAQUES) -->
-    <section id="ruta-cyber" class="relative min-h-screen py-32 flex items-center bg-[#050000] border-b border-white/5">
-        <!-- Contenedor ThreeJS -->
-        <div id="canvas-container-cyber" class="simulation-bg opacity-100"></div>
+    <section id="ruta-cyber" class="relative min-h-screen py-32 flex items-center bg-[#050000] border-b border-white/5 overflow-hidden">
+        <!-- Niebla roja volumétrica (Blurs profundos) -->
+        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-[600px] h-[600px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-6 w-full content-layer">
-            <div class="grid md:grid-cols-2 gap-16">
+        <!-- Contenedor ThreeJS para el Globo Cibernético -->
+        <div id="canvas-container-cyber" class="absolute inset-0 z-0 opacity-80 mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full content-layer relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/30 bg-red-500/10 text-red-500 font-mono text-xs mb-6">
-                        RUTA 03 // DEFENSA</div>
-                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-6 text-white">Ciberseguridad<br />& <span
-                            class="text-red-500">Hacking Ético</span></h2>
-                    <p class="text-gray-300 text-lg mb-8">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/50 bg-red-500/10 text-red-400 font-mono text-xs mb-6 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> RUTA 03 // DEFENSA
+                    </div>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_0_30px_rgba(239,68,68,0.2)]">Ciberseguridad<br />& <span class="text-red-500">Hacking Ético</span></h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
                         La defensa activa del ecosistema digital. Para construir defensas impenetrables, primero debes
-                        aprender a pensar, actuar y atacar como una amenaza real.
+                        aprender a pensar, actuar y atacar como una amenaza real en un entorno hostil.
                     </p>
-                    <p class="text-gray-400 italic text-sm mb-8">
-
-                    </p>
+                    
+                    <!-- Elemento decorativo tipo terminal -->
+                    <div class="bg-black/50 border border-red-500/20 rounded-lg p-4 font-mono text-xs text-red-400/80 mt-8 backdrop-blur-md">
+                        <p class="flex items-center gap-2"><i data-lucide="activity" class="w-4 h-4"></i> ANALYZING NETWORK TRAFFIC...</p>
+                        <p class="mt-2 text-gray-500">> firewall_status: <span class="text-red-500">BREACH DETECTED</span></p>
+                    </div>
                 </div>
 
                 <div class="space-y-6">
-                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-red-500 bg-black/60">
-                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i
-                                data-lucide="terminal-square" class="text-red-500 w-5 h-5"></i> Módulo 1: Sistemas &
-                            Redes</h4>
+                    <div class="glass-panel p-6 rounded-2xl border border-red-500/10 border-l-4 border-l-red-500 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(239,68,68,0.15)]">
+                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                            <i data-lucide="terminal-square" class="text-red-500 w-5 h-5 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"></i> Módulo 1: Sistemas & Redes
+                        </h4>
                         <p class="text-gray-400 text-sm">Arquitectura TCP/IP, comandos avanzados en entornos Unix/Linux,
                             manipulación de paquetes y reconocimiento de topologías de red.</p>
                     </div>
-                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-red-500 bg-black/60">
-                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i data-lucide="skull"
-                                class="text-red-500 w-5 h-5"></i> Módulo 2: Pentesting & OWASP</h4>
+                    <div class="glass-panel p-6 rounded-2xl border border-red-500/10 border-l-4 border-l-red-500 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(239,68,68,0.15)]">
+                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                            <i data-lucide="skull" class="text-red-500 w-5 h-5 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"></i> Módulo 2: Pentesting & OWASP
+                        </h4>
                         <p class="text-gray-400 text-sm">Identificación y explotación activa de vulnerabilidades web
                             críticas (Inyección SQL, XSS, CSRF). Uso táctico de herramientas ofensivas en Kali Linux.
                         </p>
                     </div>
-                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-red-500 bg-black/60">
-                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2"><i
-                                data-lucide="shield-alert" class="text-red-500 w-5 h-5"></i> Módulo 3: Blue Team &
-                            Mitigación</h4>
+                    <div class="glass-panel p-6 rounded-2xl border border-red-500/10 border-l-4 border-l-red-500 bg-black/40 backdrop-blur-xl hover:bg-black/60 transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(239,68,68,0.15)]">
+                        <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                            <i data-lucide="shield-alert" class="text-red-500 w-5 h-5 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]"></i> Módulo 3: Blue Team & Mitigación
+                        </h4>
                         <p class="text-gray-400 text-sm">De atacante a defensor. Hardening de servidores corporativos,
                             análisis de logs de intrusión, criptografía aplicada y parcheo de vulnerabilidades.</p>
                     </div>

@@ -182,6 +182,54 @@ const initN8nMesh = () => {
     });
 };
 initN8nMesh();
+
+const initCyberMesh = () => {
+    const container = document.getElementById('canvas-container-cyber');
+    if (!container) return;
+    
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // Globo Esférico Wireframe
+    const geometry = new THREE.SphereGeometry(30, 24, 24);
+    const material = new THREE.MeshBasicMaterial({
+        color: 0xef4444, // Rojo intenso
+        wireframe: true,
+        transparent: true,
+        opacity: 0.25
+    });
+    
+    const sphere = new THREE.Mesh(geometry, material);
+    
+    // Posicionando a la derecha y centrado
+    sphere.position.x = 20;
+    sphere.position.y = 0;
+    scene.add(sphere);
+
+    camera.position.z = 60;
+
+    // Constante rotación de amenaza global interactiva
+    const animate = function () {
+        requestAnimationFrame(animate);
+        sphere.rotation.y += 0.002;
+        sphere.rotation.x += 0.001;
+        renderer.render(scene, camera);
+    };
+
+    animate();
+
+    window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+};
+initCyberMesh();
 const initDesignCanvas = () => {
     const canvas = document.getElementById('canvas-diseno');
     const ctx = canvas.getContext('2d');
