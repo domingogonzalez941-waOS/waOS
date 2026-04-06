@@ -12,7 +12,7 @@ const dictionary = {
     "Explorar Rutas ": "Explore Paths ",
     "Aprendizaje ": "Learning ",
     "Híbrido": "Hybrid",
-    " Intensivo.": " Intensive",
+    " Intensivo": " Intensive",
     "Mentoría 1 a 1": "1-on-1 Mentoring",
     "Formación tecnológica personalizada, enfocada en resultados.": "Personalized technology training, focused on results.",
     "Diseñamos un plan 100% a tu medida. Evaluamos tu nivel, definimos un roadmap claro y trabajas 1 a 1 con un mentor en nuestra sede de Pampatar.": "We design a 100% tailored plan. We assess your level, define a clear roadmap, and you work 1-on-1 with a mentor at our Pampatar headquarters.",
