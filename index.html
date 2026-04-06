@@ -65,32 +65,52 @@
             </div>
 
             <div class="flex items-center gap-6">
-                <!-- Language Toggle -->
-                <div
-                    class="hidden md:flex items-center bg-white/5 rounded-full p-1 border border-white/10 backdrop-blur-md">
-                    <button id="btn-es" onclick="setLanguage('es')"
-                        class="px-3 py-1 text-xs font-bold bg-acurast text-black rounded-full shadow-[0_0_10px_rgba(196,255,0,0.2)] transition-all">ES</button>
-                    <button id="btn-en" onclick="setLanguage('en')"
-                        class="px-3 py-1 text-xs font-bold text-gray-400 hover:text-white transition-all">EN</button>
+                <!-- Language Toggle Desktop -->
+                <div class="hidden md:flex items-center bg-white/5 rounded-full p-1 border border-white/10 backdrop-blur-md">
+                    <button id="btn-es" onclick="setLanguage('es')" class="px-3 py-1 text-xs font-bold bg-acurast text-black rounded-full shadow-[0_0_10px_rgba(196,255,0,0.2)] transition-all">ES</button>
+                    <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1 text-xs font-bold text-gray-400 hover:text-white transition-all">EN</button>
                 </div>
 
                 <div class="hidden md:flex items-center gap-2">
-                    <a href="#ruta-n8n"
-                        class="flex items-center gap-2 text-sm font-bold text-gray-300 px-4 py-2 hover:text-acurast transition-all">
-                        Explorar Rutas
-                    </a>
-                    <button onclick="toggleLoginModal()"
-                        class="flex items-center gap-2 text-sm font-bold text-gray-300 px-4 py-2 hover:text-white transition-all">
-                        Login <i data-lucide="user" class="w-4 h-4"></i>
-                    </button>
-                    <a href="#admision"
-                        class="flex items-center gap-2 text-sm font-bold bg-transparent border border-acurast text-acurast px-5 py-2.5 rounded-full hover:bg-acurast hover:text-black transition-all hover:scale-105 active:scale-95">
-                        Aplicar Ahora <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
+                    <a href="#ruta-n8n" class="flex items-center gap-2 text-sm font-bold text-gray-300 px-4 py-2 hover:text-acurast transition-all">Explorar Rutas</a>
+                    <button onclick="toggleLoginModal()" class="flex items-center gap-2 text-sm font-bold text-gray-300 px-4 py-2 hover:text-white transition-all">Login <i data-lucide="user" class="w-4 h-4"></i></button>
+                    <a href="#admision" class="flex items-center gap-2 text-sm font-bold bg-transparent border border-acurast text-acurast px-5 py-2.5 rounded-full hover:bg-acurast hover:text-black transition-all hover:scale-105 active:scale-95">Aplicar Ahora <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                 </div>
+                
+                <!-- Botón Menú Hamburguesa Móvil -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-acurast transition-colors flex items-center justify-center p-2 relative z-50">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- MENU MOVIL FULLSCREEN -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#020202]/95 backdrop-blur-3xl translate-x-full transition-transform duration-300 flex items-center justify-center pointer-events-none opacity-0">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-400 hover:text-white pointer-events-auto">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="flex flex-col items-center gap-8 text-center pointer-events-auto">
+            <a href="#metodologia" onclick="toggleMobileMenu()" class="text-3xl font-display font-medium text-white hover:text-acurast">Metodología</a>
+            <a href="#ruta-n8n" onclick="toggleMobileMenu()" class="text-3xl font-display font-medium text-white hover:text-acurast">Explorar Rutas</a>
+            
+            <div class="w-12 h-px bg-white/10 my-2"></div>
+            
+            <div class="flex items-center gap-2 bg-white/5 rounded-full p-1 border border-white/10">
+                <button onclick="setLanguage('es'); toggleMobileMenu()" class="px-5 py-2 text-sm font-bold bg-acurast text-black rounded-full transition-all shadow-[0_0_10px_rgba(196,255,0,0.2)]">ES</button>
+                <button onclick="setLanguage('en'); toggleMobileMenu()" class="px-5 py-2 text-sm font-bold text-gray-400 hover:text-white transition-all">EN</button>
+            </div>
+            
+            <div class="w-12 h-px bg-white/10 my-2"></div>
+            
+            <button onclick="toggleLoginModal(); toggleMobileMenu()" class="text-2xl font-bold flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                Login <i data-lucide="user" class="w-6 h-6"></i>
+            </button>
+            <a href="#admision" onclick="toggleMobileMenu()" class="mt-4 px-8 py-4 bg-acurast text-black font-bold rounded-full text-xl hover:scale-105 transition-all outline-none">
+                Aplicar Ahora
+            </a>
+        </div>
+    </div>
 
     <!-- HERO SECTION -->
     <main
@@ -105,7 +125,7 @@
             class="w-full max-w-7xl mx-auto text-center content-layer mt-12 flex flex-col justify-center items-center pointer-events-auto relative z-10">
 
             <h1
-                class="relative font-display text-7xl md:text-[8.5rem] lg:text-[11rem] font-black tracking-tighter leading-[0.9] w-full flex flex-col items-center justify-center mb-12">
+                class="relative font-display text-[15vw] sm:text-7xl md:text-[8.5rem] lg:text-[11rem] font-black tracking-tighter leading-[1] w-full flex flex-col items-center justify-center mb-12">
                 <span
                     class="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gray-500 drop-shadow-[0_20px_40px_rgba(0,0,0,1)] pb-2 z-10">
                     Dominando

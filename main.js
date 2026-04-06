@@ -12,6 +12,19 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Mobile Menu Toggle
+window.toggleMobileMenu = function() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('translate-x-full')) {
+        menu.classList.remove('translate-x-full', 'pointer-events-none', 'opacity-0');
+        document.body.style.overflow = 'hidden'; // Evitar scroll
+        if (window.lucide) lucide.createIcons();
+    } else {
+        menu.classList.add('translate-x-full', 'pointer-events-none', 'opacity-0');
+        document.body.style.overflow = 'auto'; // Restaurar scroll
+    }
+};
+
 // Mouse global para el gradiente superior
 let globalMouseX = window.innerWidth / 2;
 let globalMouseY = window.innerHeight / 2;
