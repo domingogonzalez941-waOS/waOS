@@ -509,10 +509,31 @@
     </section>
 
     <!-- FORMULARIO DE ADMISIÓN (TERMINAL) -->
-    <section id="admision" class="relative z-10 py-32 px-6 bg-[#030303] border-t border-white/5">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Terminal de <span
+    <section id="admision" class="relative z-10 py-32 px-6 bg-[#030303] border-t border-white/5 overflow-hidden">
+        
+        <!-- Efecto Wave Vertical Blur -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex justify-center opacity-60">
+            <div class="w-full max-w-5xl h-[200%] box-border relative animate-vertical-wave">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[800px] bg-gradient-to-b from-transparent via-acurast/20 to-transparent blur-[90px] rounded-[100%]"></div>
+                <div class="absolute bottom-1/4 left-1/4 w-[200px] h-[500px] bg-gradient-to-b from-transparent via-acurast/10 to-transparent blur-[70px] rounded-[100%] transition-all"></div>
+                <div class="absolute top-1/4 right-1/4 w-[250px] h-[600px] bg-gradient-to-b from-transparent via-acurast/15 to-transparent blur-[80px] rounded-[100%] transition-all"></div>
+            </div>
+            
+            <!-- Red lateral sutil -->
+            <div class="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(196,255,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(196,255,0,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none"></div>
+
+            <style>
+                @keyframes flowVertical {
+                    0% { transform: translateY(-50%); }
+                    100% { transform: translateY(0%); }
+                }
+                .animate-vertical-wave { animation: flowVertical 12s linear infinite alternate ease-in-out; }
+            </style>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-12 relative z-10">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_0_15px_rgba(196,255,0,0.2)]">Terminal de <span
                         class="text-acurast">Admisión</span></h2>
                 <p class="text-gray-400">Ingresa tus parámetros para postular a las próximas cohortes presenciales en
                     Pampatar.</p>
