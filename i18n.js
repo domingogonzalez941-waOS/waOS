@@ -115,7 +115,14 @@ const dictionary = {
     "Proyecto Final (Simulacro)": "Final Project (Simulation)",
     "Realización de un ejercicio integral de Red Team/Blue Team (Capture The Flag) y reporte ejecutivo defendido en vivo.": "Execution of a comprehensive Red Team/Blue Team exercise (Capture The Flag) and live defense of an executive report.",
     "Módulo 4: Despliegue Soberano": "Module 4: Sovereign Deployment",
-    "Configuración final de tu propio nodo, gestión integral de billeteras frías y defensa de tus protocolos de seguridad on-chain.": "Final configuration of your own node, comprehensive cold wallet management, and defense of your on-chain security protocols."
+    "Configuración final de tu propio nodo, gestión integral de billeteras frías y defensa de tus protocolos de seguridad on-chain.": "Final configuration of your own node, comprehensive cold wallet management, and defense of your on-chain security protocols.",
+
+    // GENDER FIELD
+    "root@user:~ Genero_": "root@user:~ Gender_",
+    "Selecciona tu género": "Select your gender",
+    "Masculino": "Male",
+    "Femenino": "Female",
+    "Otro": "Other"
 };
 
 const textNodes = [];
